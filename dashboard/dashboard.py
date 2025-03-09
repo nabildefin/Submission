@@ -5,6 +5,7 @@ import seaborn as sns
 
 @st.cache_data
 def load_data():
+    folder_path = "/mnt/data"
     datasets = {
         "Aotizhongxin": "aotizhongxin_df.csv",
         "Changping": "changping_df.csv",
@@ -19,7 +20,7 @@ def load_data():
         "Wanliu": "wanliu_df.csv",
         "Wanshouxigong": "wanshouxigong_df.csv"
     }
-    return {name: pd.read_csv(file) for name, file in datasets.items()}
+    return {name: pd.read_csv(f"{folder_path}/{file}") for name, file in datasets.items()}
 
 # Load dataset
 dataframes = load_data()
