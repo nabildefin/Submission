@@ -38,7 +38,7 @@ if not dataframes:
 else:
    
     st.sidebar.title("Dashboard Air Quality")
-    station_selected = st.sidebar.selectbox("Pilih Stasiun", list(dataframes.keys()))
+    station_selected = st.sidebar.selectbox("Pilih Station", list(dataframes.keys()))
 
     df = dataframes[station_selected]
 
@@ -57,7 +57,7 @@ else:
         st.subheader("Heatmap Korelasi PM2.5 dengan Faktor Cuaca")
         fig, ax = plt.subplots(figsize=(10, 8))
         sns.heatmap(korelasi_matrix, annot=True, cmap="coolwarm", fmt=".2f", linewidths=0.5, ax=ax)
-        plt.title(f"Heatmap Korelasi di Stasiun {station_selected}")
+        plt.title(f"Heatmap Korelasi di Station {station_selected}")
         st.pyplot(fig)
     else:
         st.error("Data tidak memiliki kolom yang sesuai untuk analisis korelasi.")
@@ -71,7 +71,7 @@ else:
         ax.plot(df_monthly_avg_PM25.index, df_monthly_avg_PM25.values, marker="o", linestyle="-", color="b")
         ax.set_xlabel("Tanggal (Bulan)")
         ax.set_ylabel("Rata-rata PM2.5")
-        ax.set_title(f"Rata-rata Bulanan PM2.5 di Stasiun {station_selected}")
+        ax.set_title(f"Rata-rata Bulanan PM2.5 di Station {station_selected}")
         plt.xticks(rotation=15)
         plt.grid(True, linestyle="--", alpha=0.5)
         st.pyplot(fig)
