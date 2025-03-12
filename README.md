@@ -1,16 +1,9 @@
 # Air Quality Dashboard
 
-## Setup Environment - Anaconda
+## Setup Environment - Terminal
 ```
-conda create --name main-ds python=3.11
-conda activate main-ds
-pip install -r requirements.txt
-```
-
-## Setup Environment - Shell/Terminal
-```
-mkdir proyek_analisis_data
-cd proyek_analisis_data
+mkdir submission
+cd submission
 pipenv install
 pipenv shell
 pip install -r requirements.txt
