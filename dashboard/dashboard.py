@@ -5,7 +5,8 @@ import seaborn as sns
 
 st.title("Dashboard Analisis O3 di Shunyi Station")
 
-main_data = pd.read_csv("main_data.csv")
+file_path = "dashboard/main_data.csv"
+main_data = pd.read_csv(file_path)
 
 main_data["date"] = pd.to_datetime(main_data["date"], errors='coerce')
 main_data = main_data.dropna(subset=["date"])
